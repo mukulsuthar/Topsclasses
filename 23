@@ -1,0 +1,17 @@
+import 'dart:io';
+int findMax(List<int> numbers) {
+  int max = numbers[0];
+  for (int num in numbers) {
+    if (num > max) {
+      max = num;
+    }
+  }
+  return max;
+void main() {
+  stdout.write("Enter numbers separated by space: ");
+  List<String> input = stdin.readLineSync()!.split(" ");
+  List<int> numbers = input.map(int.parse).toList();
+
+  int maxNumber = findMax(numbers);
+  print("Maximum number is: $maxNumber");
+}
