@@ -1,0 +1,20 @@
+import 'dart:math'; // Built-in library
+import 'package:http/http.dart' as http; // External package
+import 'package:intl/intl.dart'; // External package
+
+void main() async {
+  var random = Random();
+  int randomNumber = random.nextInt(100);
+  print("Random Number (dart:math): $randomNumber");
+  var now = DateTime.now();
+  var formatter = DateFormat('yyyy-MM-dd – kk:mm');
+  String formattedDate = formatter.format(now);
+  print("Formatted Date (intl): $formattedDate");
+  var url = Uri.parse('https://jsonplaceholder.typicode.com/posts/1');
+  var response = await http.get(url);
+  if (response.statusCode == 200) {
+    print("Fetched Data (http):\n${response.body}");
+  } else {
+    print("Failed to fetch data.");
+  }
+}
