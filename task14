@@ -1,0 +1,19 @@
+import 'dart:io';
+
+void main() {
+  stdout.write("Enter a single character: ");
+  String input = stdin.readLineSync()!;
+
+  if (input.length != 1 || !RegExp(r'^[a-zA-Z]$').hasMatch(input)) {
+    print("Please enter a valid single alphabet character.");
+    return;
+  }
+
+  String ch = input.toLowerCase();
+
+  if ('aeiou'.contains(ch)) {
+    print("$input is a vowel.");
+  } else {
+    print("$input is a consonant.");
+  }
+}
