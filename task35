@@ -1,0 +1,13 @@
+void main() {
+  DateTime now = DateTime.now();
+  print("Current Date & Time: $now");
+  print("Year: ${now.year}");
+  print("Month: ${now.month}");
+  print("Day: ${now.day}");
+  print("Hour: ${now.hour}");
+  print("Minute: ${now.minute}");
+  DateTime birthDate = DateTime(2004, 4, 1); // April 1, 2004
+  Duration ageDuration = now.difference(birthDate);
+  int ageYears = (ageDuration.inDays / 365).floor();
+  print("You are approximately $ageYears years old.");
+}
