@@ -1,0 +1,40 @@
+
+class Printable {
+  void printInfo() {} // Method to be overridden
+}
+
+
+class Book implements Printable {
+  String title;
+  String author;
+
+  Book(this.title, this.author);
+
+  @override
+  void printInfo() {
+    print("Book Title: $title");
+    print("Author: $author");
+  }
+}
+
+class Magazine implements Printable {
+  String name;
+  int issueNumber;
+
+  Magazine(this.name, this.issueNumber);
+
+  @override
+  void printInfo() {
+    print("Magazine Name: $name");
+    print("Issue Number: $issueNumber");
+  }
+}
+
+void main() {
+  Printable p1 = Book("Dart Essentials", "Mukul Suthar");
+  Printable p2 = Magazine("Tech Monthly", 8);
+
+  p1.printInfo(); // Book info
+  print(""); // Line break
+  p2.printInfo(); // Magazine info
+}
