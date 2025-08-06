@@ -1,0 +1,33 @@
+abstract class Printable {
+  void printData();
+}
+class Person implements Printable {
+  String name;
+  int age;
+
+  Person(this.name, this.age);
+
+  @override
+  void printData() {
+    print("Person Name: $name, Age: $age");
+  }
+}
+class Book implements Printable {
+  String title;
+  String author;
+
+  Book(this.title, this.author);
+
+  @override
+  void printData() {
+    print("Book Title: $title, Author: $author");
+  }
+}
+
+void main() {
+  Person p1 = Person("Mukul", 22);
+  Book b1 = Book("Flutter Guide", "John Doe");
+
+  p1.printData();
+  b1.printData();
+}
