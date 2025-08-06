@@ -1,0 +1,25 @@
+import 'dart:io';
+
+void main() {
+  Map<String, int> studentMarks = {
+    'Mukul': 85,
+    'Yasha': 92,
+    'Jay': 78,
+    'Muskan': 88,
+    'Harshita': 91,
+  };
+
+  print("All Students and Marks:");
+  studentMarks.forEach((name, mark) {
+    print("$name: $mark");
+  });
+
+  stdout.write("\nEnter student name to search: ");
+  String name = stdin.readLineSync()!;
+
+  if (studentMarks.containsKey(name)) {
+    print("Marks of $name: ${studentMarks[name]}");
+  } else {
+    print("Student not found.");
+  }
+}
