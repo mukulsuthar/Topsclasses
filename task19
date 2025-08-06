@@ -1,0 +1,26 @@
+class Vehicle {
+  String brand;
+  double speed;
+
+  Vehicle(this.brand, this.speed);
+
+  void showInfo() {
+    print("Brand: $brand");
+    print("Speed: $speed km/h");
+  }
+}
+class Car extends Vehicle {
+  int noOfDoors;
+
+  Car(String brand, double speed, this.noOfDoors) : super(brand, speed);
+
+  @override
+  void showInfo() {
+    super.showInfo();
+    print("Number of Doors: $noOfDoors");
+  }
+}
+class Bike extends Vehicle {
+  bool hasHelmet;
+
+  Bike(String brand, double speed, this.hasHelmet) : super(brand,
