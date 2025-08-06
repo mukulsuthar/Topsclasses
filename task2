@@ -1,0 +1,13 @@
+import 'dart:io';
+
+void main() {
+  stdout.write("Enter temperature in Celsius: ");
+  double? celsius = double.tryParse(stdin.readLineSync()!);
+  
+  if (celsius != null) {
+    double fahrenheit = (celsius * 9 / 5) + 32;
+    print("$celsius°C = $fahrenheit°F");
+  } else {
+    print("Invalid input.");
+  }
+}
