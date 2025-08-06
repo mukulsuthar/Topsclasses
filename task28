@@ -1,0 +1,17 @@
+class Book {
+  String title;
+  String author;
+  double price;
+  Book({required this.title, required this.author, required this.price});
+  void displayBook() {
+    print("Title: $title");
+    print("Author: $author");
+    print("Price: ₹$price");
+  }
+}
+void main() {
+  // Creating object using named parameters
+  Book book1 = Book(title: 'Flutter Basics', author: 'Mukul Suthar', price: 299.0);
+
+  book1.displayBook();
+}
