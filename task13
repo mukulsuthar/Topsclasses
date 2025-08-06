@@ -1,0 +1,36 @@
+import 'dart:io';
+
+void main() {
+  stdout.write("Enter a list of integers separated by spaces: ");
+  List<int> numbers = stdin.readLineSync()!
+      .split(' ')
+      .map(int.parse)
+      .toList();
+
+  List<int> ascending = List.from(numbers);
+  for (int i = 0; i < ascending.length; i++) {
+    for (int j = 0; j < ascending.length - i - 1; j++) {
+      if (ascending[j] > ascending[j + 1]) {
+        int temp = ascending[j];
+        ascending[j] = ascending[j + 1];
+        ascending[j + 1] = temp;
+      }
+    }
+  }
+
+
+  List<int> descending = List.from(numbers);
+  for (int i = 0; i < descending.length; i++) {
+    for (int j = 0; j < descending.length - i - 1; j++) {
+      if (descending[j] < descending[j + 1]) {
+        int temp = descending[j];
+        descending[j] = descending[j + 1];
+        descending[j + 1] = temp;
+      }
+    }
+  }
+
+  print("Original List: $numbers");
+  print("Sorted Ascending: $ascending");
+  print("Sorted Descending: $descending");
+}
