@@ -1,0 +1,22 @@
+import 'dart:io';
+
+void findLargestAndSmallest(List<int> numbers) {
+  int largest = numbers[0];
+  int smallest = numbers[0];
+
+  for (int num in numbers) {
+    if (num > largest) largest = num;
+    if (num < smallest) smallest = num;
+  }
+
+  print("Largest number: $largest");
+  print("Smallest number: $smallest");
+}
+
+void main() {
+  stdout.write("Enter numbers separated by spaces: ");
+  List<String> input = stdin.readLineSync()!.split(' ');
+  List<int> numbers = input.map(int.parse).toList();
+
+  findLargestAndSmallest(numbers);
+}
