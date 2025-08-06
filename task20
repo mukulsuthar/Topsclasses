@@ -1,0 +1,27 @@
+import 'dart:math';
+
+
+abstract class Shape {
+  void area(); // abstract method
+}
+
+
+class Circle extends Shape {
+  double radius;
+
+  Circle(this.radius);
+
+  @override
+  void area() {
+    double result = pi * radius * radius;
+    print("Area of Circle: ${result.toStringAsFixed(2)}");
+  }
+}
+
+class Rectangle extends Shape {
+  double length, breadth;
+
+  Rectangle(this.length, this.breadth);
+
+  @override
+  void area
