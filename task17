@@ -1,0 +1,17 @@
+class Person {
+  String name;
+  int age;
+  String city;
+  Person(this.name, this.age, this.city);
+  void showDetails() {
+    print("Name: $name");
+    print("Age: $age");
+    print("City: $city");
+  }
+}
+
+void main() {
+
+  Person p1 = Person("Mukul", 22, "Ahmedabad");
+  p1.showDetails();
+}
