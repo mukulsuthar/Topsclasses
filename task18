@@ -1,0 +1,42 @@
+class BankAccount {
+  String accountNumber;
+  String accountHolder;
+  double balance;
+
+  BankAccount(this.accountNumber, this.accountHolder, this.balance);
+
+  // Method to deposit money
+  void deposit(double amount) {
+    if (amount > 0) {
+      balance += amount;
+      print("Deposited ₹$amount. New balance: ₹$balance");
+    } else {
+      print("Enter a valid amount to deposit.");
+    }
+  }
+
+  void withdraw(double amount) {
+    if (amount > balance) {
+      print("Insufficient balance. Withdrawal denied.");
+    } else if (amount <= 0) {
+      print("Invalid amount.");
+    } else {
+      balance -= amount;
+      print("Withdrew ₹$amount. Remaining balance: ₹$balance");
+    }
+  }
+
+
+  void checkBalance() {
+    print("Account Balance: ₹$balance");
+  }
+}
+
+void main() {
+  BankAccount acc = BankAccount("123456789", "Mukul Suthar", 5000);
+
+  acc.checkBalance();
+  acc.deposit(2000);
+  acc.withdraw(1000);
+  acc.withdraw(8000); // overdraft test
+}
