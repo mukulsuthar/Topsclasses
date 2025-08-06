@@ -1,0 +1,17 @@
+import 'dart:io';
+
+
+int factorial(int n) {
+  if (n <= 1) return 1;
+  return n * factorial(n - 1);
+}
+
+void main() {
+  stdout.write("Enter a number to find its factorial: ");
+  int? number = int.tryParse(stdin.readLineSync()!);
+
+  if (number == null || number < 0) {
+    print("Please enter a valid non-negative integer.");
+  } else {
+    int result = factorial(number);
+    print("Factor
